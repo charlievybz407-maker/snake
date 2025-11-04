@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Snake Game – Think Twice</title>
+  <meta name="description" content="Play a classic Snake game. Simple, fast, and fun." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="snake.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand"><span class="logo">TT</span> Snake</div>
+    <nav class="actions">
+      <button id="startBtn" class="btn primary">Start</button>
+      <button id="pauseBtn" class="btn">Pause</button>
+      <button id="restartBtn" class="btn">Restart</button>
+    </nav>
+  </header>
+
+  <main class="wrap">
+    <section class="hud card">
+      <div class="stat"><span>Score</span><b id="score">0</b></div>
+      <div class="stat"><span>High score</span><b id="high">0</b></div>
+      <div class="stat"><span>Speed</span><b id="speed">Normal</b></div>
+    </section>
+
+    <section class="stage card">
+      <canvas id="game" width="480" height="480" aria-label="Snake playfield"></canvas>
+      <div id="overlay" class="overlay hidden">
+        <div id="message" class="message">Press Start</div>
+        <div class="hint">Use Arrow Keys / WASD. Space to Pause.</div>
+      </div>
+    </section>
+
+    <section class="controls">
+      <button class="dpad up" aria-label="Up" data-dir="up">▲</button>
+      <div class="row">
+        <button class="dpad left" aria-label="Left" data-dir="left">◀</button>
+        <button class="dpad right" aria-label="Right" data-dir="right">▶</button>
+      </div>
+      <button class="dpad down" aria-label="Down" data-dir="down">▼</button>
+    </section>
+  </main>
+
+  <footer class="footer">© <span id="year"></span> Think Twice</footer>
+
+  <script src="snake.js" defer></script>
+</body>
+</html>
